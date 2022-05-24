@@ -7,13 +7,13 @@ import { Discussao } from "./Discussao/Discussao";
 
 const FontTitles = "Roboto"
 const Div = styled.div`
-    .title-download{
+    .title-download{    
         display: flex;
         justify-content: space-between;
         align-items: center;
         @media screen and (max-width: 1372px) {
             flex-direction: column;
-            align-items:flex-start ;
+            align-items:flex-end ;
             
         }
         .title{
@@ -23,6 +23,10 @@ const Div = styled.div`
             width: 100%;
             @media screen and (max-width: 1372px) {
             text-align: center;
+            @media screen and (max-width: 500px) {
+                font-size: 15px;
+                width: 100%;
+            }
         }
         }
         
@@ -47,9 +51,15 @@ const Div = styled.div`
                 border-radius: 4px;
                 margin-left: 5px;
                 cursor: pointer;
+                @media screen and (max-width: 895px) {
+                    
+                }
                 p{
                     color: white;
                     font: 500 16px ${FontTitles};
+                    @media screen and (max-width: 895px) {
+                        font-size: 14px;
+                }
                 }
                 
             }
@@ -81,6 +91,15 @@ const VideoDetalhe = styled.div`
             }
             @media screen and (max-width: 630px) {
                 font-size: 20px;
+                margin: .5rem;
+            }
+            @media screen and (max-width: 490px) {
+                font-size: 17px;
+
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 15px;
+
             }
         }
         .video-autor{
@@ -93,6 +112,7 @@ const VideoDetalhe = styled.div`
             @media screen and (max-width: 895px) {
                 margin-bottom: 1.5rem;
             }
+            
             img{
                 border: 1px solid #ED7839;
                 border-radius: 50%;
@@ -120,6 +140,18 @@ const VideoDetalhe = styled.div`
                 font-size: 25px;
                 span{
                     font-size: 12px;
+                    }
+                }
+                @media screen and (max-width: 490px) {
+                    font-size: 23px;
+                    span{
+                    font-size: 12px;
+                    }
+                }
+                @media screen and (max-width: 425px) {
+                    font-size: 20px;
+                    span{
+                    font-size: 10px;
                     }
                 }
             }

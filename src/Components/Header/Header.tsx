@@ -29,7 +29,9 @@ const Div = styled.div`
     
     .titles{
         margin-left: 2rem;
-
+        @media screen and (max-width: 895px) {
+            margin-left: 3rem;
+        }
         .sub-title{
         color: ${titleColor};
         font: 400 14px ${titleFont};

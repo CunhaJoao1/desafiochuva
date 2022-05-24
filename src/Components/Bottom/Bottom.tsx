@@ -5,7 +5,11 @@ const Div = styled.footer`
     border-top: 1px solid #e3e3e3;
     display: flex;
     padding-top: 2rem;
-
+    margin-bottom: 5rem;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
     .image{
             img{
                 width: 15rem;

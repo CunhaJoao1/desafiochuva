@@ -33,7 +33,7 @@ const Div = styled.div`
             align-items: center;
             p{
                 color: #ED7839;
-                /* cursor: pointer; */
+                cursor: pointer;
                 margin-right: 1rem;
                 display: flex;
                 align-items: center;

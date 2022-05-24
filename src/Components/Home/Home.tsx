@@ -9,7 +9,7 @@ import { Trabalhos } from "../Trabalhos/Trabalhos"
 const Div = styled.div`
     display: grid;
     grid-template-columns: 17rem 1fr ;
-    grid-template-rows: 4.25rem auto 11.3125rem;
+    grid-template-rows: 4.25rem auto 18rem;
     grid-template-areas: 
     "side navbar"
     "side main"

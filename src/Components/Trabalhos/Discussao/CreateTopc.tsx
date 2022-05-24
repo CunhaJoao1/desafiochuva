@@ -3,11 +3,13 @@ import {ImBold} from "react-icons/im"
 import {ImItalic} from "react-icons/im"
 import { useState, ChangeEvent } from "react";
 import { Question } from "./Question";
+import { DisplaySentQuestion } from "./DisplaySentQuestion";
  
 
 const Div = styled.div`
     .conteudo{
         padding: 1rem;
+        position: relative;
         
         .title{
             text-align: center;
@@ -71,6 +73,11 @@ const Div = styled.div`
                             &:hover{
                                 background-color: #c3c3c3;
                             }
+                            @media screen and (max-width: 415px) {
+                                margin-right: 0;
+                            
+                                
+                            }
                         }
                     }
                     .send{
@@ -96,6 +103,10 @@ const Div = styled.div`
                                 font: 700 15px 'Quicksand';
                                 color: white;
                             }
+                            @media screen and (max-width: 415px) {
+                            padding: 0 1.1875rem;
+                                
+                            }
                         }
                     }
                 }
@@ -109,6 +120,11 @@ const Div = styled.div`
         .question{
             display: flex;
             flex-direction: column-reverse;
+        }
+        .sent-question{
+            background-color:  #ffffff;
+            position: absolute;
+            width: 98%;
         }
     }
     
@@ -126,6 +142,7 @@ export function CreateTopic(props: CreateProps){
     const [assunto, setAssunto] = useState("")
     const [content, setContent] = useState("")
     const [questions, setQuestion] = useState<IQuestion[]>([])
+    const [isClicked, setIsClicked] = useState(false)
 
     const closeCreator = () =>{ 
         setIsOpen(isOpen)
@@ -138,11 +155,15 @@ export function CreateTopic(props: CreateProps){
             props.questionData(assunto, content)
             setAssunto("")
             setContent("")
+            setIsClicked(!isClicked)
         }
     }
     return(
         <Div>
             <div className="conteudo">
+               { isClicked === true? <div className="sent-question">
+                    <DisplaySentQuestion clickButton={(data: boolean | ((prevState: boolean) => boolean))=>setIsClicked(data)}/>
+                </div>:''}
                 <p className="title">Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
                 <div className="create-topic">
                     <label>

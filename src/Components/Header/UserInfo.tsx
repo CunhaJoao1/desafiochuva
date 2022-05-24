@@ -15,7 +15,10 @@ const Div = styled.div`
         display: flex;
         align-items: center;
         margin-right: 2rem;
-        flex-direction: column-reverse;
+        @media screen and (max-width: 895px){
+            flex-direction: column-reverse;
+            margin-top: 1.5rem;
+        }
         .language-selector{
             width: 97px;
             height: 34px;
@@ -73,6 +76,9 @@ const Div = styled.div`
                 right: 0;
             }
         }
+        .user-name-pic{
+                display: flex;
+            }
     }
 `  
 
@@ -87,7 +93,7 @@ export function UserInfo(){
                     <p className="lang">PT, BR</p>
                     <p><IoMdArrowDropdown /></p>
                 </div>
-
+            <div className="user-name-pic">
                 <div className="user-info">
                     <p className="wellcome">Bem vindo!</p>
                     <p className="user-email">alguem12@galoascience.com</p>
@@ -96,6 +102,7 @@ export function UserInfo(){
                         <div className="count-notification">{count}</div>
                         <img src="..\assets\image.svg" alt="" onClick={()=>setCount(count+1)}/>
                     </div>
+            </div>
             </div>
         </Div>
     )
