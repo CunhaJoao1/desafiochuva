@@ -11,6 +11,7 @@ const Div = styled.div`
     margin-bottom: 1rem;
     border-radius: 4px;
     box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
+    position: relative;
     .info{
         margin-left: .5rem;
     }
@@ -32,7 +33,7 @@ const Div = styled.div`
             align-items: center;
             p{
                 color: #ED7839;
-                cursor: pointer;
+                /* cursor: pointer; */
                 margin-right: 1rem;
                 display: flex;
                 align-items: center;
@@ -47,12 +48,43 @@ const Div = styled.div`
             }
             .more-icon{
                 text-align: right;
+                position: relative;
+                .options{
+                    width: 6rem;
+                    height: 7rem;
+                    background-color: #F5F5F5;
+                    position: absolute;
+                    left: 1rem;
+                    top: 0;
+                    text-align: left;
+                    border-left: 2px solid #ED7839;
+                    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+                    ul{
+                        margin-top: 1rem;
+                        margin-left: .2rem;
+                        li{
+                            list-style: none;
+                            margin-top: .2rem;
+                            font: 400 16px 'Quicksand';
+                            color: #5C5C5C;
+                            cursor: pointer;
+                            transition: color .2s;
+                            &:hover{
+                                color: #ED7839;
+                            }
+                        }
+                    }
+                }
             }
             .like-comment{
                 font:350 14px 'Segoe UI', sans-serif;
                 color: #757575;
                 cursor: default;
             }
+        }
+        .resposta{
+            position: absolute;
+            bottom: -7rem;
         }
 `
 type QuestionProps ={
@@ -61,7 +93,7 @@ type QuestionProps ={
 }
 export function Question(props: QuestionProps){
     const [likeCount, setLikeCount] = useState(0)
-
+    const [isOpen, setIsOpen] = useState(false)
     const likeComment = () =>{
         if(likeCount === 0){
             setLikeCount(likeCount +1)
@@ -70,6 +102,8 @@ export function Question(props: QuestionProps){
         }
     }
     return(
+        <>
+       
         <Div>
             <div className="info">
                 <h3>{props.title}</h3>
@@ -77,11 +111,28 @@ export function Question(props: QuestionProps){
                 <p className="questionText">{props.question}</p>
             </div>
             <div className="icon">
-                <p className="more-icon"><FiMoreVertical size={'1.5em'}/></p>
+                <div className="more-icon">
+
+                <p className="" onClick={()=>setIsOpen(!isOpen)}><FiMoreVertical size={'1.5em'}/></p>
+                   { 
+                      isOpen ===true?  <div className="options">
+                        <ul onClick={()=>setIsOpen(!isOpen)}>
+                            <li>Responder</li>
+                            <li>Perfil</li>
+                            <li onClick={likeComment}>Curtir</li>
+                        </ul>
+                    </div>:''}
+               
+                </div>
                 <p className="heart-icon" onClick={likeComment}><AiFillHeart size={'1em'}/></p>
                 <p className="like-comment">{likeCount} Like</p>
                 <p className="like-comment">1 resposta</p>
             </div>
-        </Div>
+
+           <div className="resposta">
+
+            </div> 
+        </Div> 
+        </>
     )
 }
