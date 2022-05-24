@@ -9,6 +9,19 @@ const Div = styled.div`
 
     border-radius: 3px;
     overflow-y: auto;
+        &::-webkit-scrollbar {
+        width: 5px;
+    }
+    /* Track */
+        &::-webkit-scrollbar-track {
+      background: #E7E7E7;
+    }
+        &::-webkit-scrollbar-thumb {
+        border-radius:15px;
+        background-color: #BFBFBF;
+
+    }
+
     @media screen and (max-width: 1372px) {
             max-height: 15rem;
             margin-top: 2rem;
