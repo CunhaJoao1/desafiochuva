@@ -21,7 +21,8 @@ const Div = styled.div`
                 margin-bottom: 2rem;
             }
             .title{
-
+                font: 700 18px 'Roboto';
+                color: #ED7839;
             }
             .icons{
                 margin: 1.6875rem 0 2.1875rem 0;
