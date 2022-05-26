@@ -35,17 +35,10 @@ export function Discussao(){
     }
     return(
         <Div>
-            <HeaderCards title="Discussao"/>
+            <HeaderCards title="Discussão"/>
             {
                 isOpen === false?  <AfterClick sendData={()=>setIsOpen(!isOpen)}/>: <CreateTopic sendData={()=>setIsOpen(!isOpen)} questionData={(title:any, question:any)=>createQuestion(title, question)}/>
             }
-            <div className="question">
-                {/* {
-                    questions.map((question, key: number)=>{
-                        return <Question question={question.Content} title={question.Assunto} key={key}/>
-                    })
-                } */}
-            </div>
         </Div>
     )
 }
