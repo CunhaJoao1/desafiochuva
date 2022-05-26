@@ -83,7 +83,7 @@ export function SideBar(props: SideProps){
                     <h1>SLACA 2019</h1>
                 </Header>
                 <div className="image">
-                    <img src="..\assets\dewey 4.png" alt="" />
+                    <img src={imageSide} alt="" />
                 </div>
                 <Section sections={["Apresentação", "Comitês", "Autores", "Eixos temáticos", "Trabalhos", "Contato"]}/>
                 <UserInfo/>
