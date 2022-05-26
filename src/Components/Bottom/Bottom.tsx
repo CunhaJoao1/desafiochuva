@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import BottomImage from "/src/assets/galoa.png"
 
 const Div = styled.footer`
     border-top: 1px solid #e3e3e3;
@@ -49,7 +49,7 @@ export function Bottom(){
     return(
         <Div>
             <div className="image">
-                    <img src="assets\galoa.png" alt="" />
+                    <img src={BottomImage} alt="" />
                     <div className="saiba-mais"><p>Saiba mais</p></div>
             </div>
             <div className="description">

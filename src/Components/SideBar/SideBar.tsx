@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components"
 import { UserInfo } from "../Header/UserInfo";
 import { Section } from "./Sections";
-
+import imageSide from "/src/assets/dewey 4.png"
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -97,7 +97,7 @@ export function SideBar(props: SideProps){
                     <h1>SLACA 2019</h1>
                 </Header>
                 <div className="image">
-                    <img src="..\assets\dewey 4.png" alt="" />
+                    <img src={imageSide} alt="" />
                 </div>
                 <Section sections={["Apresentação", "Comitês", "Autores", "Eixos temáticos", "Trabalhos", "Contato"]}/>
             </Div>

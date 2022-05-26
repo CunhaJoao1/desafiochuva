@@ -5,7 +5,11 @@ import { Detalhes } from "./Detalhes";
 import { Resumos } from "./Resumos";
 import { Discussao } from "./Discussao/Discussao";
 
+import videoLayer from "/src/assets/video.png"
+import videoLogo from "/src/assets/video-img.svg"
+import doiLogo from "/src/assets/doi.png"
 const FontTitles = "Roboto"
+
 const Div = styled.div`
     .title-download{    
         display: flex;
@@ -215,7 +219,7 @@ export function Trabalhos(){
                     <div className="buttons">
                         <div className="btn download"><p><FaDownload/></p><p>Download</p></div>
                         <div className="btn star"><p><AiTwotoneStar size={'1.5em'}/></p></div>
-                        <div className="btn doi"><img src="assets\doi.png" alt="" /></div>
+                        <div className="btn doi"><img src={doiLogo} alt="" /></div>
                     </div>
                     <p className="como-citar">COMO CITAR ESSE TRABALHO?</p>
                 </div>
@@ -226,12 +230,11 @@ export function Trabalhos(){
                     <h5 className="video-name">Análise sensorial de preparações funcionais desenvolvidas para escolares entre 09 e 15 anos, do município de Campinas/SP </h5>
 
                     <div className="video-autor">
-                        <img src="assets\video-img.svg" alt="" />
+                        <img src={videoLogo} alt="" />
                         <h3>Beatriz Christiane Melo <span>FCA / Universidade Estadual de Campinas</span> </h3>
                     </div>
-
                     <div className="overlayer"></div>
-                        <img className="video-player" src="assets\video.png" alt="" />                  
+                        <img className="video-player" src={videoLayer} alt="" />                  
                 </div>
                 <div className="detalhes">
                     <Detalhes tema="Alimentação e saúde" tipo="Pôster" palavrasChaves={["Alimentos, ", "funcionais, ", "alimentação escolar"]}/>

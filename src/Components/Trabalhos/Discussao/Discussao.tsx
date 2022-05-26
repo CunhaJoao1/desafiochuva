@@ -18,6 +18,7 @@ const Div = styled.div`
 interface IQuestion{
     Assunto: string,
     Content: string,
+    
 }
 export function Discussao(){
     const [isOpen, setIsOpen]       = useState(false)

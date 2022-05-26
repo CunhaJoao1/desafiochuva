@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 
 const fontSection = "500 16px Quicksand"
 const Div = styled.div`
@@ -22,16 +23,14 @@ position: relative;
             padding: 0.5625rem 2rem;
         }
     }
-    .divider{
-    }
 `
 type SectionProps = {
     sections: string[],
 }
+window.location
 export function Section(props: SectionProps){
-    const [isSelected, setIsSelected] = useState(false)
     const [sectionName, setSectionName] = useState("")
-
+    
     function SelectSection(section: string){
         const SectionSelected = section.replace(/\s+/g, '-').toLocaleLowerCase().replace("ç", "c").replace("ê","e").replace("ã","a").replace("á","a") //Faz um tratamento de string da section selecinada, tirando os caractéres especiais e espaços para usar como link
 
@@ -42,7 +41,7 @@ export function Section(props: SectionProps){
         <Div>
             {
                 props.sections.map((section, key: number)=>{
-                    return <div key={key} id={sectionName} className={sectionName === 'apresentacao'? 'selected':''} onClick={() => SelectSection(section)}><p>{section}</p></div>
+                    return <div key={key} id={sectionName} onClick={() => SelectSection(section)}><p>{section}</p></div>
                 })
             }
         </Div>
