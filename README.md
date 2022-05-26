@@ -16,7 +16,7 @@ Para ter acesso ao projeto basta clicar <a href="https://beamish-gnome-36c95a.ne
 Clonar o projeto
 
 ```bash
-  git clone https://github.com/CunhaJoao1/desafiochuva
+  git clone https://github.com/CunhaJoao1/desafiochuva.git
 ```
 
 Vá para a pasta do projeto
