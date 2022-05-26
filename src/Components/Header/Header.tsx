@@ -97,7 +97,6 @@ type HeaderProps = {
 }
 export function Header(props: HeaderProps){
     const [isOpen, setIsOpen] = useState(false)
-    const [count, setCount] = useState(0)
     const {width, height} = getWindowDimensions()
 
     const OpenMenu = () =>{

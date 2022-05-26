@@ -2,13 +2,13 @@ import styled from "styled-components";
 import {FiMoreVertical} from "react-icons/fi"
 import {AiFillHeart} from "react-icons/ai"
 import { useState } from "react";
-
+import { Respostas } from "./Respostas/Respostas";
 
 
 const Div = styled.div`
     border: 1px solid #E7E7E7;
     padding: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     border-radius: 4px;
     box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.1);
     position: relative;
@@ -81,11 +81,16 @@ const Div = styled.div`
                 color: #757575;
                 cursor: default;
             }
+            .comment{
+                font:350 14px 'Segoe UI', sans-serif;
+                color: #757575;
+                cursor: pointer;
+            }
         }
-        .resposta{
-            position: absolute;
-            bottom: -7rem;
-        }
+`
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
 `
 type QuestionProps ={
     title: string,
@@ -94,6 +99,7 @@ type QuestionProps ={
 export function Question(props: QuestionProps){
     const [likeCount, setLikeCount] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
+    const [isClicked, setIsClicked] = useState(false)
     const likeComment = () =>{
         if(likeCount === 0){
             setLikeCount(likeCount +1)
@@ -102,7 +108,7 @@ export function Question(props: QuestionProps){
         }
     }
     return(
-        <>
+        <Content>
        
         <Div>
             <div className="info">
@@ -126,13 +132,17 @@ export function Question(props: QuestionProps){
                 </div>
                 <p className="heart-icon" onClick={likeComment}><AiFillHeart size={'1em'}/></p>
                 <p className="like-comment">{likeCount} Like</p>
-                <p className="like-comment">1 resposta</p>
+                <p className="comment" onClick={()=>setIsClicked(!isClicked)}>1 resposta</p>
             </div>
 
-           <div className="resposta">
-
+           
+        </Div>
+         <div className="resposta">
+                    <Respostas isClicked={isClicked} Author="Fulano de tal" className="Autor" Resposta="Lorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun teste"/>
+                    <Respostas isClicked={isClicked} Author="Fulano de tal" className="Coautor" Resposta="Lorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun teste"/>
+                    <Respostas isClicked={isClicked} Author="Fulano de tal" className="Usuario" Resposta="Lorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun testeLorem ipsun teste"/>
             </div> 
-        </Div> 
-        </>
+
+        </Content>
     )
 }
