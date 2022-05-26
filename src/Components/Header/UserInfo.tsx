@@ -3,7 +3,7 @@ import { FaGlobe } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import styled from "styled-components";
 
-
+import userImage from "/src/assets/image.svg"
 
 const titleColor = "#725C5C";
 const titleFont = "Roboto";
@@ -100,7 +100,7 @@ export function UserInfo(){
                 </div>
                     <div className="user-pic">
                         <div className="count-notification">{count}</div>
-                        <img src="..\assets\image.svg" alt="" onClick={()=>setCount(count+1)}/>
+                        <img src={userImage} alt="" onClick={()=>setCount(count+1)}/>
                     </div>
             </div>
             </div>
