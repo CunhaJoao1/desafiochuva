@@ -1,7 +1,7 @@
 # Desafio Chuva
 Olá amigos da chuva, tudo bem? Hoje estou apresentando a vocês o desafio que eu realizei. Foi um projeto bem legal e que posso assegurar a todos, que sim, eu colhi muito aprendizado, tive que pesquisar e aprender bastente.
 
-Para ter acesso ao projeto basta clicar <a href="https://beamish-gnome-36c95a.netlify.app/" target="_blank">Aqui</a>
+Para ter acesso ao projeto basta clicar <a href="https://desafio-chuva.netlify.app/" target="_blank">Aqui</a>
 
 
 ## Tecnologias utilizadas
